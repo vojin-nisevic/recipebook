@@ -1,0 +1,9 @@
+<a href="#"  style="text-decoration: none" (click)="onClicked()">
+  <div class="card row flex-row-reverse">
+    <img class="col-lg-4 card-img-end img-fluid overflow-hidden p-0" [src]="recipeItem.imagePath" />
+    <div class="col-lg-8 card-body">
+      <h3 class="card-title">{{recipeItem.name}}</h3>
+      <p class="card-text">{{recipeItem.description}}</p>
+    </div>
+  </div>
+</a>
