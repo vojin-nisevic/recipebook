@@ -1,5 +1,5 @@
-<div class="row" >
-  <div class="col-12 m-2" >
+<div class="row">
+  <div class="col-12 m-2">
     <img [src]="recipeToShow.imagePath" alt="{{recipeToShow.name}}" class="img-fluid" style="max-height: 320px">
   </div>
 </div>
@@ -11,25 +11,20 @@
 <div class="row">
   <div class="col-12">
     <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">
+      <button class="btn btn-primary dropdown-toggle" id="dropdownmenuDetails" data-bs-toggle="dropdown"
+              aria-expanded="false">
         Manage recipe <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" role="button">Manage<span class="caret"></span> </a>
-          <ul class="dropdown-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Add ingredient to shopping list</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Edit recipe</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Delete recipe</a>
-            </li>
-          </ul>
+      <ul class="dropdown-menu" aria-labelledby="dropdownmenuDetails">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Add ingredient to shopping list</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="#">Edit recipe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Delete recipe</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -45,16 +40,7 @@
     Ingredients
   </div>
 </div>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
+
 <!--<div class="row">-->
 <!--    <h1 *ngIf="recipeToShow;else selectRecipe">{{recipeToShow.name}}</h1>-->
 <!--    <ng-template #selectRecipe><h3 >Select recipe</h3></ng-template>-->
