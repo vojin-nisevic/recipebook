@@ -9,7 +9,7 @@ import {ShoppingListService} from "../services/shopping-list.service";
 })
 
 export class ShoppingListComponent implements OnInit {
-  dd: string = '1';
+
   ingredients: Ingredient[];
 
   constructor(private shopService: ShoppingListService) {
