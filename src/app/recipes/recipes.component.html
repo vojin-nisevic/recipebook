@@ -3,9 +3,6 @@
     <app-recipe-list></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail *ngIf="recipeToSend; else showDetails" [recipeToShow]="recipeToSend"></app-recipe-detail>
-    <ng-template #showDetails>
-      <h3>Select recipe</h3>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

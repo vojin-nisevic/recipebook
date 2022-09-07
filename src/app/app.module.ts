@@ -10,6 +10,10 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterLink, RouterLinkActive, RouterLinkWithHref, RouterOutlet } from "@angular/router";
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +25,18 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
     RecipeListComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterOutlet,
+        RouterLinkWithHref,
+        RouterLinkActive,
+        RouterLink
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

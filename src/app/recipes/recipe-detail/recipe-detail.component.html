@@ -17,13 +17,13 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownmenuDetails">
         <li class="nav-item">
-          <a class="nav-link" href="#">Add ingredient to shopping list</a>
+          <a class="nav-link" style="cursor: pointer"  (click)="sendIngredients()">Add ingredient to shopping list</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Edit recipe</a>
+          <a class="nav-link" style="cursor: pointer" (click)="onEditRecipe()">Edit recipe</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Delete recipe</a>
+          <a class="nav-link" style="cursor: pointer" >Delete recipe</a>
         </li>
       </ul>
     </div>
@@ -31,13 +31,17 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-12">
     {{recipeToShow.description}}
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
-    Ingredients
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipeToShow.ingredients">
+        {{ingredient.name}} - {{ingredient.amount}}
+      </li>
+    </ul>
   </div>
 </div>
 
