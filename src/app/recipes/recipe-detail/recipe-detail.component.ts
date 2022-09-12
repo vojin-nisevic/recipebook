@@ -26,6 +26,7 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo: this.activeRoute});
   }
   sendIngredients(){
-    this.recipeService.ingredientsToAdd.emit(this.recipeToShow.ingredients);
+    console.log('From send ingredients' + this.recipeToShow.name);
+    this.recipeService.ingredientsToAdd.next(this.recipeToShow.ingredients);
   }
 }
