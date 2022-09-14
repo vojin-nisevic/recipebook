@@ -14,6 +14,7 @@ export class ShoppingEditComponent implements OnInit {
   constructor(private shopService: ShoppingListService) { }
 
   ngOnInit(): void {
+    this.model = new Ingredient('', 0);
   }
 
   onAdd(form: NgForm){
