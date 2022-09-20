@@ -1,8 +1,8 @@
 <a style="text-decoration: none; cursor: pointer">
-  <div class="card row flex-row-reverse" [routerLink]="[index]" routerLinkActive="active">
+  <div class="card row flex-row-reverse" [routerLink]="[index]" routerLinkActive="active" style="display: flex">
     <img class="col-lg-4 card-img-end img-fluid overflow-hidden p-0" [src]="recipeItem.imagePath" alt="image"/>
     <div class="col-lg-8 card-body" routerLinkActive="active">
-      <h3 class="card-title">{{recipeItem.name}}</h3>
+      <h5 class="card-title">{{recipeItem.name}}</h5>
       <p class="card-text">{{recipeItem.description}}</p>
     </div>
   </div>

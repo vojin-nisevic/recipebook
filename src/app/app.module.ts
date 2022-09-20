@@ -14,7 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterLink, RouterLinkActive, RouterLinkWithHref, RouterOutlet } from "@angular/router";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { ErrorHandlerComponent } from './shared/error-handler/error-handler.component';
 
 @NgModule({
   declarations: [
@@ -28,18 +30,22 @@ import { FormsModule } from "@angular/forms";
     ShoppingListComponent,
     ShoppingEditComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ErrorHandlerComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        RouterOutlet,
-        RouterLinkWithHref,
-        RouterLinkActive,
-        RouterLink,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterOutlet,
+    RouterLinkWithHref,
+    RouterLinkActive,
+    RouterLink,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

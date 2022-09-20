@@ -1,12 +1,15 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from "../models/ingredient.model";
-import { Subject } from "rxjs";
+import { BehaviorSubject, Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingListService {
-  ingredientsAdded = new Subject<Ingredient>();
+  currentList = new EventEmitter<Ingredient[]>();
+  itemToEdit = new BehaviorSubject<number>(null);
+  itemToDelete = new BehaviorSubject<number>(null);
+
 
   private ingredients: Ingredient[] = [
     new Ingredient('Beef', 3),
@@ -28,13 +31,33 @@ export class ShoppingListService {
         this.ingredients.find(el => el.name === ing.name)
           .amount += ing.amount;
       }
-    })
+    });
+    this.currentList.emit(this.ingredients.slice());
   }
 
   addIngredient(ing: Ingredient) {
-    console.log('Service: ' + this.ingredients.length);
-    this.ingredients.push(ing);
-    console.log('Service: ' + this.ingredients.length);
-    this.ingredientsAdded.next(ing);
+    this.ingredients.forEach(p => console.log(p));
+    if (!this.ingredients.find(el => el.name.trim() === ing.name.trim())) {
+      this.ingredients.push(ing);
+    } else {
+      this.ingredients.find(el => el.name === ing.name)
+        .amount += ing.amount;
+    }
+    this.currentList.emit(this.ingredients.slice());
+  }
+
+  getSingleIngredient(index: number) {
+    return this.ingredients[index];
+  }
+
+  updateAmount(name: string, am: number, index: number) {
+    this.ingredients[index].amount = am;
+    this.ingredients[index].name = name;
+    this.itemToEdit.next(null);
+  }
+
+  deleteIngredient(name: string){
+    this.ingredients.splice(this.ingredients.findIndex(el => el.name === name),1);
+    this.itemToDelete.next(null);
   }
 }

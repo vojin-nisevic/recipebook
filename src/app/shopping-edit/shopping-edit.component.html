@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12 col-lg-6">
-    <form #f="ngForm" (ngSubmit)="onAdd(f)" class="row align-items-center gy-2 gx-3"  >
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="row align-items-center gy-2 gx-3"  >
       <div class="col-sm-5 col-lg-6 form-group">
         <label for="name">Name</label>
         <input type="text" id="name" class="form-control" [(ngModel)]="model.name" #nameInput="ngModel" name="nameInput"
@@ -23,9 +23,9 @@
         </span>
       </div>
       <div class="col-12">
-        <button class="btn btn-success m-1" type="submit" [disabled]="f.invalid">Add</button>
-        <button class="btn btn-danger m-1" type="submit">Delete</button>
-        <button class="btn btn-primary m-1" type="submit">Clear</button>
+        <button class="btn btn-success m-1" type="submit" [disabled]="f.invalid">{{!edit ? 'Add' : 'Edit'}}</button>
+        <button *ngIf="edit" class="btn btn-danger m-1" type="button" (click)="onDelete(nameInput.value)">Delete</button>
+        <button class="btn btn-primary m-1" type="button"  (click)="onClear()">Clear</button>
       </div>
     </form>
   </div>

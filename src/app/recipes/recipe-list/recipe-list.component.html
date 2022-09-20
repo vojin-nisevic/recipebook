@@ -1,11 +1,25 @@
-<div class="row">
-  <div class="col-12">
-    <button class="btn btn-success" (click)="newRecipe()">New Recipe</button>
+<div *ngIf="errorMessage" class="alert alert-dark">
+  <div class="col-8">
+    <h4 class="alert-heading">Error</h4>
+    <app-error-handler [errorMessage]=errorMessage></app-error-handler>
   </div>
+  <div class="col-4">
+    <button type="button" class="alert-danger alert" (click)="cancelError()">OK</button>
+  </div>
+
+
+
 </div>
-<hr>
-<div class="row">
-  <div class="col-12">
-    <app-recipe-item *ngFor="let recipe of recipes;let i = index" [recipeItem]="recipe" [index]="i"></app-recipe-item>
+<div *ngIf="!errorMessage">
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-success m-1" (click)="newRecipe()">New Recipe</button>
+    </div>
+  </div>
+  <hr>
+<!--  <div class="row">-->
+    <div class="card-group">
+      <app-recipe-item *ngFor="let recipe of recipes;let i = index" [recipeItem]="recipe" [index]="i"></app-recipe-item>
+<!--    </div>-->
   </div>
 </div>
