@@ -17,9 +17,9 @@
     </div>
   </div>
   <hr>
-<!--  <div class="row">-->
-    <div class="card-group">
-      <app-recipe-item *ngFor="let recipe of recipes;let i = index" [recipeItem]="recipe" [index]="i"></app-recipe-item>
+  <div class="card-group row row-cols-md-4 row-cols-sm-1">
+<!--    <div class="col">-->
+      <app-recipe-item *ngFor="let recipe of recipes;let i = index" [recipeItem]="recipe" [index]="i" class="col"></app-recipe-item>
 <!--    </div>-->
   </div>
 </div>

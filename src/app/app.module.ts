@@ -17,6 +17,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ErrorHandlerComponent } from './shared/error-handler/error-handler.component';
+import { AuthComponent } from './auth/auth.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ErrorHandlerComponent } from './shared/error-handler/error-handler.comp
     ShoppingEditComponent,
     RecipeStartComponent,
     RecipeEditComponent,
-    ErrorHandlerComponent
+    ErrorHandlerComponent,
+    AuthComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

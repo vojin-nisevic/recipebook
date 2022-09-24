@@ -12,15 +12,19 @@ export class RecipesService {
   recipeFreshList = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
-    new Recipe('Beef with vegetables', 'Good meal!', '/assets/img/beef.png',
-      [new Ingredient('meat', 1), new Ingredient('tomato', 1)]),
-    new Recipe('Beef with rice', 'Healthy meal!', '/assets/img/beef.png',
-      [new Ingredient('meat', 1), new Ingredient('cheese', 1)]),
-    new Recipe('Lasagna', 'Mmmm lasagna!', '/assets/img/lasagna.jpg',
-      [new Ingredient('meat', 1), new Ingredient('cheese', 1)]),
+    // new Recipe('Beef with vegetables', 'Good meal!', '/assets/img/beef.png',
+    //   [new Ingredient('meat', 1), new Ingredient('tomato', 1)]),
+    // new Recipe('Beef with rice', 'Healthy meal!', '/assets/img/beef.png',
+    //   [new Ingredient('meat', 1), new Ingredient('cheese', 1)]),
+    // new Recipe('Lasagna', 'Mmmm lasagna!', '/assets/img/lasagna.jpg',
+    //   [new Ingredient('meat', 1), new Ingredient('cheese', 1)]),
   ]
 
   constructor() {
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
   }
 
   getRecipes() {
